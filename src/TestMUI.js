@@ -10,7 +10,17 @@ class MyComponent extends Component{
         this.fetchUtil=new FetchUtil();
     }
     handleClick(){
-        this.fetchUtil.request({url:'./cart/add.do?productId=26&count=1',});
+        this.fetchUtil.request({
+            url:'./product/list.do?keyWord=1',
+            success:(res)=>{
+                alert('success');
+                console.log(res);
+            },
+            error:(res)=>{
+                alert('error');
+                console.log(res);
+            }
+    });
     }
     render(){
         return (
