@@ -12,6 +12,8 @@ class FetchUtil {
             if (0 === jsonData.status) {
                 // this.testfunc(); 状态码0，代表请求成功，返回某个对象，或者在此处直接处理
                 alert(0);
+                // typeof param.success 取出param.success的类型，然后判断是否是function
+                // 紧接一个 && ， 如果前者为true就会返回后者，后者是一个函数，所以就会执行
                 typeof param.success === 'function' && param.success(jsonData.data, jsonData.msg);
             } else if (10 === jsonData.status) {
                 //状态码10，需要强制登陆
