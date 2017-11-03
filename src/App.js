@@ -6,6 +6,9 @@ import MyComponent from './TestMUI';
 //import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Helmet} from 'react-helmet';
 import './App.less';
+import FixedPage from './mylayout/fixed';
+import FixedHeaderPage from './mylayout/fixed-header';
+import ResponsePage from './mylayout/response-page';
 
 class App extends Component {
   render() {
@@ -15,8 +18,8 @@ class App extends Component {
       <Helmet>
       <title>app title</title>
       </Helmet>
-      
-      <MyComponent test="hello"/>
+      <ResponsePage/>
+      //<MyComponent test="hello"/>
       </div>
       //</MuiThemeProvider>
     );
