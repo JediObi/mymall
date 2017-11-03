@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-
+import {Helmet} from 'react-helmet';
 import FetchUtil from './utils/mm';
+import {Button} from 'antd';
 
 
 class MyComponent extends Component{
@@ -10,7 +10,7 @@ class MyComponent extends Component{
         this.fetchUtil=new FetchUtil();
     }
     handleClick(){
-        this.fetchUtil.request({
+        /*this.fetchUtil.request({
             url:'./product/list.do?keyWord=1',
             success:(res)=>{
                 alert('success');
@@ -20,13 +20,13 @@ class MyComponent extends Component{
                 alert('error');
                 console.log(res);
             }
-    });
+    });*/
+    console.log(this.fetchUtil.getUrlParam('test'));
     }
     render(){
         return (
             <div>
-            <RaisedButton label="Primary" backgroundColor="#00BCD4" primary={false}/>
-            <RaisedButton label="Primary" primary={true} onClick={()=>this.handleClick()}/>
+            <Button type="primary" onClick={()=>this.handleClick()}>Button</Button>
             </div>
         );
     }
